@@ -1,5 +1,5 @@
 ---
-- name: Ensure installation
+- name: Ensure installation of script ping_exporter
   include_tasks: install.yml
-- name: Ensure configuration
+- name: Ensure configuration of script ping_exporter
   include_tasks: configure.yml

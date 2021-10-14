@@ -1,3 +1,14 @@
 ---
-# Default values for variables of the role
-# variable_name: value
+ping_exporter:
+  prometheus_host: 192.168.1.1
+  targets:
+    - 1.1.1.1
+    - 8.8.8.8
+  log_file: /var/log/ping_exporter.log
+  count: 4
+  port: 8787
+  frequency: 10
+  interval: 1
+  timeout: 2
+  family: "4"
+  handle_ufw: yes

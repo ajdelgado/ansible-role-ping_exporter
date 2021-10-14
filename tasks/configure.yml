@@ -20,6 +20,7 @@
     rule: allow
     port: "{{ ping_exporter['port'] }}"
     src: "{{ ping_exporter['prometheus_host'] }}"
+  when: ping_exporter['handle_ufw']
 - name: Ensure there is a logrotate rule for ping_exporter
   template:
     dest: /etc/logrotate.d/ping_exporter
