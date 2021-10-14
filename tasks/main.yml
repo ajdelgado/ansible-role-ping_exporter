@@ -1,0 +1,5 @@
+---
+- name: Ensure installation
+  include_tasks: install.yml
+- name: Ensure configuration
+  include_tasks: configure.yml

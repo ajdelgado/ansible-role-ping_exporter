@@ -1,0 +1,5 @@
+---
+- name: Restart ping_exporter service
+  service:
+    name: ping_exporter
+    state: restarted

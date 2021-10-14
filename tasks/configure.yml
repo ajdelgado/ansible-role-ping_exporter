@@ -1,0 +1,27 @@
+---
+- name: Ensure ping_exporter is configured
+  template:
+    dest: /etc/ping_exporter.conf
+    src: templates/ping_exporter.conf.j2
+    backup: yes
+  notify: Restart ping_exporter service
+- name: Ensure ping_exporter systemd unit is installed
+  template:
+    dest: /etc/systemd/system/ping_exporter.service
+    src: templates/ping_exporter.service.j2
+    backup: yes
+- name: Ensure ping_exporter service is enabled and running
+  systemd:
+    name: ping_exporter.service
+    state: started
+    enabled: yes
+- name: Ensure Prometheus host can reach ping_exporter
+  ufw:
+    rule: allow
+    port: "{{ ping_exporter['port'] }}"
+    src: "{{ ping_exporter['prometheus_host'] }}"
+- name: Ensure there is a logrotate rule for ping_exporter
+  template:
+    dest: /etc/logrotate.d/ping_exporter
+    src: templates/ping_exporter_logrotate.j2
+    backup: yes

@@ -1,0 +1,14 @@
+# Managed by Ansible
+# /etc/systemd/system/ping_exporter.service
+# User service: $HOME/.config/systemd/user/ping_exporter.service
+
+[Unit]
+Description=Ping exporter service
+After=syslog.target network.target auditd.service
+OnFailure=status_email_antoniodelgado@%n.service
+
+[Service]
+ExecStart=/var/lib/from_repos/ping_exporter/ping_exporter/ping_exporter.py --config /etc/ping_exporter.conf
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+log_file="{{ ping_exporter['log_file']}}"
+count={{ ping_exporter['count'] }}
+port={{ ping_exporter['port'] }}
+frequency={{ ping_exporter['frequency'] }}
+interval={{ ping_exporter['interval'] }}
+timeout={{ ping_exporter['timeout'] }}
+family="{{ ping_exporter['family'] }}"
+targets={% for target in ping_exporter['targets'] %}"{{ target }}"{% if not loop.last %},{% endif %}{% endfor %}
