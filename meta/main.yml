@@ -1,0 +1,27 @@
+---
+galaxy_info:
+  author: Antonio J. Delgado (ajdelgado)
+  description: Deploy ping exporter for Prometheus
+
+#  issue_tracker_url: https://github.com/uoi-io/ansible-galera/issues
+
+  license: GPLv3
+
+  min_ansible_version: "2.0"
+
+  github_branch: master
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - focal
+    - jammy
+
+  galaxy_tags:
+    - prometheus
+    - ping
+    - node-exporter
+    - network
+    - monitoring
+
+dependencies: []
