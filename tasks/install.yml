@@ -1,7 +1,7 @@
 ---
 - name: Ensure prometheus-ping-exporter is cloned
   git:
-    repo: ssh://git@repos.susurrando.com:7272/srv/git.repos/ping_exporter.git
+    repo: ssh://git@repos.susurrando.com:1122/srv/git.repos/ping_exporter.git
     dest: /var/lib/from_repos/ping_exporter
     depth: 1
   notify: Restart ping_exporter service
