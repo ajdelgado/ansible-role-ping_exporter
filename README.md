@@ -14,4 +14,4 @@ Check [defaults](/defaults/main.yml) but create a dictionary *ping_exporter* wit
 - interval: Time between packets sent
 - timeout: The maximum waiting time for receiving a reply in seconds
 - family: IP family version to use (A string "4" or "6")
-- handle_ufw: Whether to create an "allow" rule in UFW for the port and the Prometheus server IP or hostname.
+- handle_ufw: Whether to create an "allow" rule in UFW for the port and the Prometheus server IP or hostname.Main (latest) code in https://repos.susurrando.com/adelgado/ansible-role-ping_exporter
